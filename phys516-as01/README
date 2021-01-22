@@ -1,0 +1,19 @@
+This folder (phys516-as01) contains instruction and codes needed to complete assignment 1
+for PHYS 516.
+
+as01.pdf: Assignment itself.
+
+mean.c: C program to compute the value of pi. To compile the program, type
+  cc -o mean mean.c
+in your terminal. This will creata an executable named mean. To run the executable, type
+  ./mean
+Note "." denotes the current directory, thus ./mean is the absolute path to the
+executable, mean.
+
+rosen-proof.pdf: Reading assignment on mathematical proof.
+
+Logic.pdf: Lecture note on logic and proof.
+
+MinLinAlg: All what you will need to know about linear algebra in this class.
+
+AsgnGuide.pdf: Assignment guidelines on analytical derivations.
