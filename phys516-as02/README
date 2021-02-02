@@ -1,0 +1,13 @@
+This folder (phys516-as02) contains instruction and codes needed to complete assignment 2
+for PHYS 516.
+
+as02.pdf: Assignment itself.
+
+mean.c: C program to compute the value of pi. To compile the program, type
+  cc -o mean mean.c
+in your terminal. This will creata an executable named mean. To run the executable, type
+  ./mean
+Note "." denotes the current directory, thus ./mean is the absolute path to the
+executable, mean.
+
+leastSqFit.pdf: Note on least square fit of a line.
