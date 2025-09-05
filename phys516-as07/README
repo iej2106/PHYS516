@@ -1,0 +1,7 @@
+This folder (phys516-as06) contains instruction and codes needed to complete assignment 7
+for PHYS 516.
+
+as07.pdf: Assignment itself.
+diffuse.c: Base random-walk program for parts I and II.
+ProgStockSim.pdf: Outline of stock-price simulation programming.
+ProgrammingQMC.pdf: Outline of quantum Monte Carlo (QMC) programming.

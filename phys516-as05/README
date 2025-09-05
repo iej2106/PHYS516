@@ -1,0 +1,9 @@
+This folder (phys516-as05) contains instruction and code needed to complete assignment 5
+for PHYS 516.
+
+as05.pdf: Assignment itself.
+
+qd1.c, qd1.h, qd1.in: C program, header file and input file for basic quantum dynamics
+simulation in one dimension, which will be modified by you to change the numerical solver
+from space-splitting method to spectral method.
+four1.c: Fast Fourier transform (FFT) function from Numerical Recipes.

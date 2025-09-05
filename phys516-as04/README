@@ -1,0 +1,19 @@
+This folder (phys516-as04) contains instruction and code needed to complete assignment 4
+for PHYS 516.
+
+as04.pdf: Assignment itself.
+
+VAC.pdf: Note on velocity autocorrelation function (VAC).
+
+md.c, md.h, md.in: C program, header file and input file for basic molecular dynamics
+simulation, which will be modified by you to compute VAC.
+To compile the program into an executable named md, type
+  cc -O -o md md.c -lm
+in your terminal. Here, we have used a compiler option, -O, to optimize the performance.
+To run the executable, type
+  ./md < md.in
+by redirecting the input-parameter file, md.in, into the standard input of the program.
+
+Tuckerman-RESPA-JCP92.pdf: Reference paper,
+"Reversible multiple time scale molecular dynamics,"
+M. Tuckerman, B. J. Berne, and G. J. Martyna, J. Chem. Phys. 97, 1990 (1992).

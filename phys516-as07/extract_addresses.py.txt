@@ -1,0 +1,55 @@
+import pytesseract
+from pdf2image import convert_from_path
+import cv2
+import pandas as pd
+import os
+
+# Ensure the Tesseract executable is in your PATH
+pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'  # Update this path as necessary
+
+def extract_text_from_image(image):
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    text = pytesseract.image_to_string(gray_image)
+    return text
+
+def extract_employer_address(text):
+    # Implement your custom logic to extract the employer's address
+    # For demonstration, let's assume the address follows the keyword "Address:"
+    lines = text.split('\n')
+    address_lines = []
+    for line in lines:
+        if "Address:" in line:
+            start_idx = lines.index(line)
+            address_lines = lines[start_idx:start_idx + 3]  # Assuming address is within next 3 lines
+            break
+    return ' '.join(address_lines).replace('Address:', '').strip()
+
+def process_pdf(pdf_path):
+    pages = convert_from_path(pdf_path)
+    text = ""
+    for page in pages:
+        image = cv2.cvtColor(np.array(page), cv2.COLOR_RGB2BGR)
+        text += extract_text_from_image(image)
+    return text
+
+def main():
+    pdf_folder = 'paystubs'
+    output_csv = 'employer_addresses.csv'
+    pdf_files = [f for f in os.listdir(pdf_folder) if f.endswith('.pdf')]
+
+    data = {'PDF': [], 'Employer Address': []}
+
+    for pdf_file in pdf_files:
+        pdf_path = os.path.join(pdf_folder, pdf_file)
+        print(f"Processing {pdf_path}...")
+        text = process_pdf(pdf_path)
+        address = extract_employer_address(text)
+        data['PDF'].append(pdf_file)
+        data['Employer Address'].append(address)
+
+    df = pd.DataFrame(data)
+    df.to_csv(output_csv, index=False)
+    print(f"Extracted addresses saved to {output_csv}")
+
+if __name__ == '__main__':
+    main()

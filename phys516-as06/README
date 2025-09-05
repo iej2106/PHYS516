@@ -1,0 +1,15 @@
+This folder (phys516-as06) contains instruction and codes needed to complete assignment 6
+for PHYS 516.
+
+as06.pdf: Assignment itself.
+
+Kwon-TBSi-PRB94.pdf: "Transferable tight-binding models for silicon,"
+I. Kwon et al., Phys. Rev. B 49, 7242 (1994), from which you obtain tight-binding model
+parameters for Si.
+
+ProgrammingTB.pdf: Outline of programming.
+
+tb_util_angstrom.c, tb_util_au.c: C program to set up atomic coordinates in a Si crystal
+(either use angstrom or atomic unit of your choice to specify length).
+
+eigen.c: Matrix diagonalization program from Numerical Recipes.
